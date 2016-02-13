@@ -1,0 +1,11 @@
+﻿<Window x:Class="Tekla_HideMembersFromDrawing.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel>
+            <Button Click="Button_Click">Show Assembly Parts in Model</Button>
+            <Button>Show all members</Button>
+        </StackPanel>
+    </Grid>
+</Window>

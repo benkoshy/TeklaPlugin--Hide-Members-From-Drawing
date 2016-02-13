@@ -1,0 +1,2559 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tekla.Common.Geometry</name>
+    </assembly>
+    <members>
+        <member name="T:Tekla.Common.Geometry.Vector2Tuple">
+            <summary>
+            Vector2 Tuple for implementing internal algorithms
+            </summary>
+        </member>
+        <member name="F:Tekla.Common.Geometry.Vector2Tuple.v0">
+            <summary>
+            Backing field for index 0
+            </summary>
+        </member>
+        <member name="F:Tekla.Common.Geometry.Vector2Tuple.v1">
+            <summary>
+            Backing field for index 1
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.Vector2Tuple.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/> is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"/> to compare with this instance.</param>
+            <returns>
+              <c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.Vector2Tuple.Equals(Tekla.Common.Geometry.Vector2Tuple)">
+            <summary>
+            Determines whether the specified Vector2Tuple is equal to this instance.
+            </summary>
+            <param name="other">The Vector2Tuple to compare with this instance.</param>
+            <returns>
+              <c>true</c> if the specified Vector2Tuple is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.Vector2Tuple.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="P:Tekla.Common.Geometry.Vector2Tuple.Item(System.Int32)">
+            <summary>
+            Gets or sets the <see cref="T:Tekla.Common.Geometry.Vector2"/> at the specified index.
+            </summary>
+            <param name="index">the index</param>
+            <returns>the indexed value.</returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.PlaneSideClassification">
+            <summary>
+            Defines the type of intersection for a Plane3
+            </summary>
+        </member>
+        <member name="F:Tekla.Common.Geometry.PlaneSideClassification.Back">
+            <summary>
+            The tested primitive is on the back side (opposite side than normal)
+            </summary>
+        </member>
+        <member name="F:Tekla.Common.Geometry.PlaneSideClassification.Front">
+            <summary>
+            The tested primitive is on the front side (side to the direction of plane's normal)
+            </summary>
+        </member>
+        <member name="F:Tekla.Common.Geometry.PlaneSideClassification.Intersecting">
+            <summary>
+            The tested primitive intersects the plane.
+            </summary>
+        </member>
+        <member name="T:Tekla.Common.Geometry.IntersectionSegment2">
+            <summary>
+            Contains extension methods for intersection calculus for 2D segment
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionSegment2.Intersects(Tekla.Common.Geometry.Segment2,Tekla.Common.Geometry.AxisAlignedBox2)">
+            <summary>
+            Tests if the segment intersects with the given axis aligned box.
+            </summary>
+            <param name="segment">The segment.</param>
+            <param name="axisAlignedBox">The axis aligned box.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionSegment2.IntersectionWith(Tekla.Common.Geometry.Segment2,Tekla.Common.Geometry.AxisAlignedBox2)">
+            <summary>
+            Creates an intersection of the segment with the axis aligned box.
+            </summary>
+            <param name="segment">The segment.</param>
+            <param name="axisAlignedBox">The axis aligned box.</param>
+            <returns>The intersection as a segment or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionSegment2.IntersectionPointsWith(Tekla.Common.Geometry.Segment2,Tekla.Common.Geometry.AxisAlignedBox2)">
+            <summary>
+            Calculates the intersections points of segment with axis aligned box.
+            </summary>
+            <param name="segment">The segment.</param>
+            <param name="axisAlignedBox">The axis aligned box.</param>
+            <returns>The collection of intersection points.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionSegment2.Intersects(Tekla.Common.Geometry.Segment2,Tekla.Common.Geometry.Box2)">
+            <summary>
+            Tests if the segment intersects with the box.
+            </summary>
+            <param name="segment">The segment.</param>
+            <param name="box">The box.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionSegment2.IntersectionWith(Tekla.Common.Geometry.Segment2,Tekla.Common.Geometry.Box2)">
+            <summary>
+            Creates an intersections of the segment with the box
+            </summary>
+            <param name="segment">The segment.</param>
+            <param name="box">The box.</param>
+            <returns>The intersection as a segment or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionSegment2.IntersectionPointsWith(Tekla.Common.Geometry.Segment2,Tekla.Common.Geometry.Box2)">
+            <summary>
+            Calculates the intersections points of segment with box.
+            </summary>
+            <param name="segment">The segment.</param>
+            <param name="box">The box.</param>
+            <returns>The collection of intersection points.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionSegment2.Intersects(Tekla.Common.Geometry.Segment2,Tekla.Common.Geometry.Triangle2)">
+            <summary>
+            Tests if the segment intersects with the triangle.
+            </summary>
+            <param name="segment">The segment.</param>
+            <param name="triangle">The triangle.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionSegment2.IntersectionWith(Tekla.Common.Geometry.Segment2,Tekla.Common.Geometry.Triangle2)">
+            <summary>
+            Creates an intersections of the segment with the triangle
+            </summary>
+            <param name="segment">The segment.</param>
+            <param name="triangle">The triangle.</param>
+            <returns>The intersection as a segment or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionSegment2.IntersectionPointsWith(Tekla.Common.Geometry.Segment2,Tekla.Common.Geometry.Triangle2)">
+            <summary>
+            Calculates the intersections points of segment with triangle.
+            </summary>
+            <param name="segment">The segment.</param>
+            <param name="triangle">The triangle.</param>
+            <returns>The collection of intersection points.</returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.IntersectionBox3">
+            <summary>
+            Contains extension methods for intersection calculus for 3D box
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionBox3.Intersects(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Tests if the Box3 intersects with other.
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="other">The other.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionBox3.Intersects(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Tests if the Box3 intersects with the given line3.
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="line3">The line3.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionBox3.IntersectionWith(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Creates an intersections of the Box3 with the Line3
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="line3">The line3.</param>
+            <returns>The intersection as Segment3 or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionBox3.IntersectionPointsWith(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Calculates the intersections points of Box3 with Line3.
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="line3">The line3.</param>
+            <returns>The collection of intersection points.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionBox3.Intersects(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Plane3)">
+            <summary>
+            Tests if the Box3 intersects with the given Plane3.
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="plane3">The plane3.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionBox3.Intersects(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Tests if the Box3 intersects with the given Ray3.
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="ray3">The ray3.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionBox3.IntersectionWith(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Creates an intersections of the Box3 with the Ray3.
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="ray3">The ray3.</param>
+            <returns>The intersection as Segment3 or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionBox3.IntersectionPointsWith(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Calculates the intersections points of Box3 with Ray3.
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="ray3">The ray3.</param>
+            <returns>The collection of intersection points.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionBox3.Intersects(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Tests if the Box3 intersects with the given Segment3.
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="segment3">The segment3.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionBox3.IntersectionWith(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Creates an intersections of Box3 with the Segment3.
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="segment3">The segment3.</param>
+            <returns>The intersection as Segment3 or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionBox3.IntersectionPointsWith(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Calculates the intersections points of Box3 with Segment3.
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="segment3">The segment3.</param>
+            <returns>The collection of intersection points.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionBox3.Intersects(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Tests if the Box3 intersects with the given Triangle3.
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="triangle3">The triangle3.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionBox3.IntersectionPointsWith(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Calculates the intersections points of Box3 with Triangle3.
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="triangle3">The triangle3.</param>
+            <returns>The collection of intersection points.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3Line3.#ctor(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tekla.Common.Geometry.DistanceLine3Line3"/> struct.
+            </summary>
+            <param name="line0">The line0.</param>
+            <param name="line1">The line1.</param>
+        </member>
+        <member name="T:Tekla.Common.Geometry.QuaternionExtensionMethods">
+            <summary>
+            Extension methods for Quaternion
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.QuaternionExtensionMethods.ToAxisAngle(Tekla.Common.Geometry.Quaternion,Tekla.Common.Geometry.Vector3@,System.Double@)">
+            <summary>
+            Creates axis/angle -pair from this <c>Quaternion</c>.
+            The quaternion representing the rotation is
+            q = cos(A/2)+sin(A/2)*(x*i+y*j+z*k)
+            </summary>
+            <param name="quaternion">The quaternion.</param>
+            <param name="axis">The 3D axis.</param>
+            <param name="angle">The angle around the axis.</param>
+        </member>
+        <member name="M:Tekla.Common.Geometry.QuaternionExtensionMethods.Rotate(Tekla.Common.Geometry.Quaternion,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Rotates the specified vector by this quaternion.
+            </summary>
+            <param name="quaternion">The quaternion.</param>
+            <param name="vector">The vector.</param>
+            <returns>The rotated vector.</returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.IntersectionBox2">
+            <summary>
+            Contains extension methods for intersection calculus for 2D box
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionBox2.Intersects(Tekla.Common.Geometry.Box2,Tekla.Common.Geometry.Box2)">
+            <summary>
+            Tests, if the box intersects with other box.
+            </summary>
+            <param name="box">The box.</param>
+            <param name="other">The other box.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionBox2.Intersects(Tekla.Common.Geometry.Box2,Tekla.Common.Geometry.Line2)">
+            <summary>
+            Tests if the Box2 intersects with the given Line2.
+            </summary>
+            <param name="box">The box2.</param>
+            <param name="line2">The line2.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionBox2.Intersects(Tekla.Common.Geometry.Box2,Tekla.Common.Geometry.Segment2)">
+            <summary>
+            Tests if the Box2 intersects with the given Segment2.
+            </summary>
+            <param name="box">The box2.</param>
+            <param name="segment2">The segment2.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionBox2.IntersectionWith(Tekla.Common.Geometry.Box2,Tekla.Common.Geometry.Line2)">
+            <summary>
+            Creates an intersections of the box with the line
+            </summary>
+            <param name="box">The box.</param>
+            <param name="line">The line.</param>
+            <returns>The intersection as Segment or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionBox2.IntersectionWith(Tekla.Common.Geometry.Box2,Tekla.Common.Geometry.Segment2)">
+            <summary>
+            Creates an intersections of the box with the segment
+            </summary>
+            <param name="box">The box.</param>
+            <param name="segment">The segment.</param>
+            <returns>The intersection as Segment or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionBox2.IntersectionPointsWith(Tekla.Common.Geometry.Box2,Tekla.Common.Geometry.Line2)">
+            <summary>
+            Calculates the intersections points of the box with the line.
+            </summary>
+            <param name="box">The box.</param>
+            <param name="line">The line.</param>
+            <returns>The collection of intersection points.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionBox2.IntersectionPointsWith(Tekla.Common.Geometry.Box2,Tekla.Common.Geometry.Segment2)">
+            <summary>
+            Calculates the intersections points of the box with the segment.
+            </summary>
+            <param name="box">The box.</param>
+            <param name="segment">The segment.</param>
+            <returns>The collection of intersection points.</returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.DistanceBox3">
+            <summary>
+            Contains extension methods for distance calculus between primitives.
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceBox3.DistanceTo(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Distance from <c>Box3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="vector3">The vector3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceBox3.ClosestPointTo(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Closest point in <c>Box3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="vector3">The vector3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceBox3.ShortestSegmentTo(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Shortest segment from <c>Box3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="vector3">The vector3.</param>
+            <returns>
+            Shortest segment, negative end is in box3, positive end is vector3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceBox3.DistanceTo(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Distance from <c>Box3</c> to <c>Segment3</c>.
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="segment">The segment.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceBox3.ClosestPointTo(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Closest point in <c>Box3</c> to <c>Segment3</c>.
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="segment">The segment.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceBox3.ShortestSegmentTo(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Shortest segment from <c>Box3</c> to <c>Segment3</c>.
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="segment">The segment.</param>
+            <returns>
+            Shortest segment, negative end is in box3, positive end is in segment.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceBox3.DistanceTo(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Distance from <c>Box3</c> to <c>Line3</c>.
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="line3">The line3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceBox3.ClosestPointTo(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Closest point in <c>Box3</c> to <c>Line3</c>.
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="line3">The line3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceBox3.ShortestSegmentTo(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Shortest segment from <c>Box3</c> to <c>Line3</c>.
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="line3">The line3.</param>
+            <returns>
+            Shortest segment, negative end is in box3, positive end is in line3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceBox3.DistanceTo(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Distance from <c>Box3</c> to <c>Ray3</c>.
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="ray3">The ray3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceBox3.ClosestPointTo(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Closest point in <c>Box3</c> to <c>Ray3</c>.
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="ray3">The ray3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceBox3.ShortestSegmentTo(Tekla.Common.Geometry.Box3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Shortest segment from <c>Box3</c> to <c>Ray3</c>.
+            </summary>
+            <param name="box3">The box3.</param>
+            <param name="ray3">The ray3.</param>
+            <returns>
+            Shortest segment, negative end is in box3, positive end is in ray3.
+            </returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.IntersectionTriangle3">
+            <summary>
+            Contains extension methods for intersection calculus for 3D triangle
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionTriangle3.Intersects(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Tests if the triangle intersects with the box.
+            </summary>
+            <param name="triangle">The triangle.</param>
+            <param name="box">The box.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionTriangle3.IntersectionPointsWith(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Calculates the intersections points of Triangle3 with Box3.
+            </summary>
+            <param name="triangle">The triangle.</param>
+            <param name="box">The box.</param>
+            <returns>The collection of intersection points.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionTriangle3.Intersects(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Tests if the triangle intersects with the box.
+            </summary>
+            <param name="triangle">The triangle.</param>
+            <param name="other">The other.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionTriangle3.IntersectionPointsWith(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Calculates the intersections points of triangle with other triangle.
+            </summary>
+            <param name="triangle">The triangle.</param>
+            <param name="other">The other.</param>
+            <returns>The collection of intersection points.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionTriangle3.Intersects(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Tests if the triangle intersects with the line.
+            </summary>
+            <param name="triangle">The triangle.</param>
+            <param name="line">The line.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionTriangle3.IntersectionWith(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Creates an intersections of the triangle with the line
+            </summary>
+            <param name="triangle">The triangle.</param>
+            <param name="line">The line.</param>
+            <returns>The intersection as vector or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionTriangle3.Intersects(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Plane3)">
+            <summary>
+            Tests if the triangle intersects with the plane.
+            </summary>
+            <param name="triangle">The triangle.</param>
+            <param name="plane">The plane.</param>
+            <returns>Return true, if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionTriangle3.IntersectionWith(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Plane3)">
+            <summary>
+            Creates an intersections of the triangle with the plane
+            </summary>
+            <param name="triangle">The triangle.</param>
+            <param name="plane">The plane.</param>
+            <returns>The intersection as segment or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionTriangle3.IntersectionPointsWith(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Plane3)">
+            <summary>
+            Calculates the intersections points of triangle with plane.
+            </summary>
+            <param name="triangle">The triangle.</param>
+            <param name="plane">The plane.</param>
+            <returns>The collection of intersection points.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionTriangle3.Intersects(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Tests if the triangle intersects with the ray.
+            </summary>
+            <param name="triangle">The triangle.</param>
+            <param name="ray">The ray.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionTriangle3.IntersectionWith(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Creates an intersections of the triangle3 with the ray
+            </summary>
+            <param name="triangle">The triangle.</param>
+            <param name="ray">The ray3.</param>
+            <returns>The intersection as Vector3 or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionTriangle3.Intersects(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Tests if the triangle intersects with the segment.
+            </summary>
+            <param name="triangle">The triangle.</param>
+            <param name="segment">The segment.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionTriangle3.IntersectionWith(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Creates an intersections of the triangle with the segment
+            </summary>
+            <param name="triangle">The triangle.</param>
+            <param name="segment">The segment.</param>
+            <returns>The intersection as vector or null if no intersection.</returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.DistanceVector3">
+            <summary>
+            Contains extension methods for distance calculus between primitives.
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceVector3.ShortestSegmentTo(Tekla.Common.Geometry.Vector3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Distance from <c>Vector3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="vector3">The vector3.</param>
+            <param name="other">The other Vector3</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceVector3.DistanceTo(Tekla.Common.Geometry.Vector3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Distance from <c>Vector3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="vector3">The vector3.</param>
+            <param name="other">The other Vector3</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceVector3.DistanceTo(Tekla.Common.Geometry.Vector3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Distance from <c>Vector3</c> to <c>Line3</c>
+            </summary>
+            <param name="vector3">The vector3.</param>
+            <param name="line3">The line3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceVector3.ShortestSegmentTo(Tekla.Common.Geometry.Vector3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Shortest segment from <c>Vector3</c> to <c>Line3</c>.
+            </summary>
+            <param name="vector3">The vector3.</param>
+            <param name="line3">The line3.</param>
+            <returns>
+            Shortest segment, negative end is vector3, positive end is in line3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceVector3.DistanceTo(Tekla.Common.Geometry.Vector3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Distance from <c>Vector3</c> to <c>Box3</c>.
+            </summary>
+            <param name="vector3">The vector3.</param>
+            <param name="box3">The box3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceVector3.ShortestSegmentTo(Tekla.Common.Geometry.Vector3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Shortest segment from <c>Vector3</c> to <c>Box3</c>.
+            </summary>
+            <param name="vector3">The vector3.</param>
+            <param name="box3">The box3.</param>
+            <returns>
+            Shortest segment, negative end is vector3, positive end is in box3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceVector3.DistanceTo(Tekla.Common.Geometry.Vector3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Distance from <c>Vector3</c> to <c>Triangle3</c>.
+            </summary>
+            <param name="vector3">The vector3.</param>
+            <param name="triangle3">The triangle3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceVector3.ShortestSegmentTo(Tekla.Common.Geometry.Vector3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Shortest segment from <c>Vector3</c> to <c>Triangle3</c>.
+            </summary>
+            <param name="vector3">The vector3.</param>
+            <param name="triangle3">The triangle3.</param>
+            <returns>
+            Shortest segment, negative end is vector3, positive end is in triangle3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceVector3.DistanceTo(Tekla.Common.Geometry.Vector3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Distance from <c>Vector3</c> to <c>Segment3</c>.
+            </summary>
+            <param name="vector3">The vector3.</param>
+            <param name="segment3">The segment3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceVector3.ShortestSegmentTo(Tekla.Common.Geometry.Vector3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Shortest segment from <c>Vector3</c> to <c>Segment3</c>.
+            </summary>
+            <param name="vector3">The vector3.</param>
+            <param name="segment3">The segment3.</param>
+            <returns>
+            Shortest segment, negative end is vector3, positive end is in segment3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceVector3.DistanceTo(Tekla.Common.Geometry.Vector3,Tekla.Common.Geometry.Plane3)">
+            <summary>
+            Always positive distance from <c>Vector3</c> to <c>Plane3</c>.
+            </summary>
+            <param name="vector3">The vector3.</param>
+            <param name="plane3">The plane3.</param>
+            <returns>The always positive distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceVector3.ShortestSegmentTo(Tekla.Common.Geometry.Vector3,Tekla.Common.Geometry.Plane3)">
+            <summary>
+            Shortest segment from <c>Vector3</c> to <c>Plane3</c>.
+            </summary>
+            <param name="vector3">The vector3.</param>
+            <param name="plane3">The plane3.</param>
+            <returns>
+            Shortest segment, negative end is vector3, positive end is in plane3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceVector3.DistanceTo(Tekla.Common.Geometry.Vector3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Distance from <c>Vector3</c> to <c>Ray3</c>.
+            </summary>
+            <param name="vector3">The vector3.</param>
+            <param name="ray3">The ray3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceVector3.ShortestSegmentTo(Tekla.Common.Geometry.Vector3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Shortest segment from <c>Vector3</c> to <c>Ray3</c>.
+            </summary>
+            <param name="vector3">The vector3.</param>
+            <param name="ray3">The ray3.</param>
+            <returns>
+            Shortest segment, negative end is vector3, positive end is in ray3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceVector3.DistanceTo(Tekla.Common.Geometry.Vector3,Tekla.Common.Geometry.Rectangle3)">
+            <summary>
+            Distance from <c>Vector3</c> to <c>Rectangle3</c>.
+            </summary>
+            <param name="vector3">The vector3.</param>
+            <param name="rectangle3">The rectangle3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceVector3.ShortestSegmentTo(Tekla.Common.Geometry.Vector3,Tekla.Common.Geometry.Rectangle3)">
+            <summary>
+            Shortest segment from <c>Vector3</c> to <c>Rectangle3</c>.
+            </summary>
+            <param name="vector3">The vector3.</param>
+            <param name="rectangle3">The rectangle3.</param>
+            <returns>
+            Shortest segment, negative end is vector3, positive end is in rectangle3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceVector3.DistanceTo(Tekla.Common.Geometry.Vector3,Tekla.Common.Geometry.Circle3)">
+            <summary>
+            Distance from <c>Vector3</c> to <c>Circle3</c>.
+            </summary>
+            <param name="vector3">The vector3.</param>
+            <param name="circle3">The circle3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceVector3.ShortestSegmentTo(Tekla.Common.Geometry.Vector3,Tekla.Common.Geometry.Circle3)">
+            <summary>
+            Shortest segment from <c>Vector3</c> to <c>Circle3</c>.
+            </summary>
+            <param name="vector3">The vector3.</param>
+            <param name="circle3">The circle3.</param>
+            <returns>
+            Shortest segment, negative end is vector3, positive end is in circle3.
+            </returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.IntersectionTriangle2">
+            <summary>
+            Contains extension methods for intersection calculus for 2D triangle
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionTriangle2.Intersects(Tekla.Common.Geometry.Triangle2,Tekla.Common.Geometry.Triangle2)">
+            <summary>
+            Tests if the triangle intersects with the other.
+            </summary>
+            <param name="triangle">The triangle.</param>
+            <param name="other">The other.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionTriangle2.IntersectionPointsWith(Tekla.Common.Geometry.Triangle2,Tekla.Common.Geometry.Triangle2)">
+            <summary>
+            Calculates the intersections points of triangle with other triangle.
+            </summary>
+            <param name="triangle">The triangle.</param>
+            <param name="other">The other triangle.</param>
+            <returns>The collection of intersection points.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionTriangle2.Intersects(Tekla.Common.Geometry.Triangle2,Tekla.Common.Geometry.Line2)">
+            <summary>
+            Tests if the triangle intersects with the line.
+            </summary>
+            <param name="triangle">The triangle.</param>
+            <param name="line">The line.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionTriangle2.IntersectionWith(Tekla.Common.Geometry.Triangle2,Tekla.Common.Geometry.Line2)">
+            <summary>
+            Creates an intersections of the triangle with the line
+            </summary>
+            <param name="triangle">The triangle.</param>
+            <param name="line">The line.</param>
+            <returns>The intersection as segment or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionTriangle2.IntersectionPointsWith(Tekla.Common.Geometry.Triangle2,Tekla.Common.Geometry.Line2)">
+            <summary>
+            Calculates the intersections points of triangle with line.
+            </summary>
+            <param name="triangle">The triangle.</param>
+            <param name="line">The line2.</param>
+            <returns>The collection of intersection points.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionTriangle2.Intersects(Tekla.Common.Geometry.Triangle2,Tekla.Common.Geometry.Segment2)">
+            <summary>
+            Tests if the triangle intersects with the segment.
+            </summary>
+            <param name="triangle">The triangle.</param>
+            <param name="segment">The segment.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionTriangle2.IntersectionWith(Tekla.Common.Geometry.Triangle2,Tekla.Common.Geometry.Segment2)">
+            <summary>
+            Creates an intersections of the triangle with the segment
+            </summary>
+            <param name="triangle">The triangle.</param>
+            <param name="segment">The segment.</param>
+            <returns>The intersection as Segment2 or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionTriangle2.IntersectionPointsWith(Tekla.Common.Geometry.Triangle2,Tekla.Common.Geometry.Segment2)">
+            <summary>
+            Calculates the intersections points of triangle with segment.
+            </summary>
+            <param name="triangle">The triangle.</param>
+            <param name="segment">The segment.</param>
+            <returns>The collection of intersection points.</returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.Vector3Triple">
+            <summary>
+            Vector3 Triple for implementing internal algorithms
+            </summary>
+        </member>
+        <member name="F:Tekla.Common.Geometry.Vector3Triple.v0">
+            <summary>
+            Backing field for index 0
+            </summary>
+        </member>
+        <member name="F:Tekla.Common.Geometry.Vector3Triple.v1">
+            <summary>
+            Backing field for index 1
+            </summary>
+        </member>
+        <member name="F:Tekla.Common.Geometry.Vector3Triple.v2">
+            <summary>
+            Backing field for index 2
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.Vector3Triple.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/> is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"/> to compare with this instance.</param>
+            <returns>
+              <c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.Vector3Triple.Equals(Tekla.Common.Geometry.Vector3Triple)">
+            <summary>
+            Determines whether the specified Vector3Triple is equal to this instance.
+            </summary>
+            <param name="other">The Vector3Triple to compare with this instance.</param>
+            <returns>
+              <c>true</c> if the specified Vector3Triple is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.Vector3Triple.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="P:Tekla.Common.Geometry.Vector3Triple.Item(System.Int32)">
+            <summary>
+            Gets or sets the <see cref="T:Tekla.Common.Geometry.Vector3"/> at the specified index.
+            </summary>
+            <param name="index">the index</param>
+            <returns>the indexed value.</returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.Transform3ExtensionMethods">
+            <summary>
+            Extension methods for class Transform3.
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.Transform3ExtensionMethods.GetInversed(Tekla.Common.Geometry.AffineTransform3)">
+            <summary>
+            Gets the inverse transformation.
+            </summary>
+            <param name="transform">The transform to be inversed..</param>
+            <returns>
+            The inversed transformation
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.Transform3ExtensionMethods.Transform(Tekla.Common.Geometry.AffineTransform3,Tekla.Common.Geometry.AffineTransform3)">
+            <summary>
+            Transforms the specified transformation and combines those as a new one.
+            f. ex. 
+            var rotation = Transform3.FromAxisAngle(Vector3.X, Math.PI/2); // rotate 90 degree over X axis.
+            var translate = new Transform3(UnitVector3.X, UnitVector3.Y, UnitVector3.Z, Vector3.Y); // translate 1.0 to Y axis direction.
+            var transformA = translate.Transform(rotation); // transformA: first rotates and then transforms.
+            var transformA2 = Transform3Factory.Combine(rotation, translate); // identical to transformA
+            var transformB = rotation.Transform(translate); // transformB: first translates and then rotates.
+            var transformB2 = Transform3Factory.Combine(translate, rotation); // identical to transformB
+            </summary>
+            <param name="transformer">The transformer.</param>
+            <param name="source">The transformed.</param>
+            <returns>the transformed transform.</returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.DistanceLine3">
+            <summary>
+            Contains extension methods for distance calculus between primitives.
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3.DistanceTo(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Distance from <c>Line3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="line3">The line3.</param>
+            <param name="vector3">The vector3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3.ClosestPointTo(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Closest point in <c>Line3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="line3">The line3.</param>
+            <param name="vector3">The vector3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3.ShortestSegmentTo(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Shortest segment from <c>Line3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="line3">The line3.</param>
+            <param name="vector3">The vector3.</param>
+            <returns>
+            Shortest segment, negative end is in line3, positive end is vector3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3.DistanceTo(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Distance from <c>Line3</c> to <c>Box3</c>.
+            </summary>
+            <param name="line3">The line3.</param>
+            <param name="box3">The box3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3.ClosestPointTo(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Closest point in <c>Line3</c> to <c>Box3</c>.
+            </summary>
+            <param name="line3">The line3.</param>
+            <param name="box3">The box3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3.ShortestSegmentTo(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Shortest segment from <c>Line3</c> to <c>Box3</c>.
+            </summary>
+            <param name="line3">The line3.</param>
+            <param name="box3">The box3.</param>
+            <returns>
+            Shortest segment, negative end is in line3, positive end is in box3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3.DistanceTo(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Distance from <c>Line3</c> to <c>Line3</c>.
+            </summary>
+            <param name="line3">The line3.</param>
+            <param name="other">The other line3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3.ClosestPointTo(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Closest point in <c>Line3</c> to other <c>Line3</c>.
+            </summary>
+            <param name="line3">The line3.</param>
+            <param name="other">The other line3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3.ShortestSegmentTo(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Shortest segment from <c>Line3</c> to other <c>Line3</c>.
+            </summary>
+            <param name="line3">The line3.</param>
+            <param name="other">The other line3.</param>
+            <returns>
+            Shortest segment, negative end is in line3, positive end is in other line3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3.DistanceTo(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Distance from <c>Line3</c> to <c>Ray3</c>.
+            </summary>
+            <param name="line3">The line3.</param>
+            <param name="ray3">The ray3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3.ClosestPointTo(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Closest point in <c>Line3</c> to <c>Ray3</c>.
+            </summary>
+            <param name="line3">The line3.</param>
+            <param name="ray3">The ray3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3.ShortestSegmentTo(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Shortest segment from <c>Line3</c> to <c>Ray3</c>.
+            </summary>
+            <param name="line3">The line3.</param>
+            <param name="ray3">The ray3.</param>
+            <returns>
+            Shortest segment, negative end is in line3, positive end is in ray3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3.DistanceTo(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Rectangle3)">
+            <summary>
+            Distance from <c>Line3</c> to <c>Rectangle3</c>.
+            </summary>
+            <param name="line3">The line3.</param>
+            <param name="rectangle3">The rectangle3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3.ClosestPointTo(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Rectangle3)">
+            <summary>
+            Closest point in <c>Line3</c> to <c>Rectangle3</c>.
+            </summary>
+            <param name="line3">The line3.</param>
+            <param name="rectangle3">The rectangle3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3.ShortestSegmentTo(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Rectangle3)">
+            <summary>
+            Shortest segment from <c>Line3</c> to <c>Rectangle3</c>.
+            </summary>
+            <param name="line3">The line3.</param>
+            <param name="rectangle3">The rectangle3.</param>
+            <returns>
+            Shortest segment, negative end is in line3, positive end is in rectangle3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3.DistanceTo(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Distance from <c>Line3</c> to <c>Segment3</c>.
+            </summary>
+            <param name="line3">The line3.</param>
+            <param name="segment3">The segment3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3.ClosestPointTo(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Closest point in <c>Line3</c> to <c>Segment3</c>.
+            </summary>
+            <param name="line3">The line3.</param>
+            <param name="segment3">The segment3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3.ShortestSegmentTo(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Shortest segment from <c>Line3</c> to <c>Segment3</c>.
+            </summary>
+            <param name="line3">The line3.</param>
+            <param name="segment3">The segment3.</param>
+            <returns>
+            Shortest segment, negative end is in line3, positive end is in segment3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3.DistanceTo(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Distance from <c>Line3</c> to <c>Triangle3</c>.
+            </summary>
+            <param name="line3">The line3.</param>
+            <param name="triangle3">The triangle3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3.ClosestPointTo(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Closest point in <c>Line3</c> to <c>Triangle3</c>.
+            </summary>
+            <param name="line3">The line3.</param>
+            <param name="triangle3">The triangle3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3.ShortestSegmentTo(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Shortest segment from <c>Line3</c> to <c>Triangle3</c>.
+            </summary>
+            <param name="line3">The line3.</param>
+            <param name="triangle3">The triangle3.</param>
+            <returns>
+            Shortest segment, negative end is in line3, positive end is in triangle3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3.DistanceTo(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Circle3)">
+            <summary>
+            Distance from <c>Line3</c> to <c>Circle3</c>.
+            </summary>
+            <param name="line3">The line3.</param>
+            <param name="circle3">The circle3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3.ClosestPointTo(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Circle3)">
+            <summary>
+            Closest point in <c>Line3</c> to <c>Circle3</c>.
+            </summary>
+            <param name="line3">The line3.</param>
+            <param name="circle3">The circle3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3.ShortestSegmentTo(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Circle3)">
+            <summary>
+            Shortest segment from <c>Line3</c> to <c>Circle3</c>.
+            </summary>
+            <param name="line3">The line3.</param>
+            <param name="circle3">The circle3.</param>
+            <returns>
+            Shortest segment, negative end is in line3, positive end is in circle3.
+            </returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.DistanceSegment3">
+            <summary>
+            Contains extension methods for distance calculus between primitives.
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceSegment3.DistanceTo(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Distance from <c>Segment3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="segment3">The segment3.</param>
+            <param name="vector3">The vector3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceSegment3.ClosestPointTo(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Closest point in <c>Segment3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="segment3">The segment3.</param>
+            <param name="vector3">The vector3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceSegment3.ShortestSegmentTo(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Shortest segment from <c>Segment3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="segment3">The segment3.</param>
+            <param name="vector3">The vector3.</param>
+            <returns>
+            Shortest segment, negative end is in segment3, positive end is vector3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceSegment3.DistanceTo(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Distance from <c>Segment3</c> to <c>Line3</c>.
+            </summary>
+            <param name="segment3">The segment3.</param>
+            <param name="line3">The line3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceSegment3.ClosestPointTo(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Closest point in <c>Segment3</c> to <c>Line3</c>.
+            </summary>
+            <param name="segment3">The segment3.</param>
+            <param name="line3">The line3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceSegment3.ShortestSegmentTo(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Shortest segment from <c>Segment3</c> to <c>Line3</c>.
+            </summary>
+            <param name="segment3">The segment3.</param>
+            <param name="line3">The line3.</param>
+            <returns>
+            Shortest segment, negative end is in segment3, positive end is in line3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceSegment3.DistanceTo(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Distance from <c>Segment3</c> to <c>Ray3</c>.
+            </summary>
+            <param name="segment3">The segment3.</param>
+            <param name="ray3">The ray3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceSegment3.ClosestPointTo(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Closest point in <c>Segment3</c> to <c>Ray3</c>.
+            </summary>
+            <param name="segment3">The segment3.</param>
+            <param name="ray3">The ray3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceSegment3.ShortestSegmentTo(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Shortest segment from <c>Segment3</c> to <c>Ray3</c>.
+            </summary>
+            <param name="segment3">The segment3.</param>
+            <param name="ray3">The ray3.</param>
+            <returns>
+            Shortest segment, negative end is in segment3, positive end is in ray3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceSegment3.DistanceTo(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Rectangle3)">
+            <summary>
+            Distance from <c>Segment3</c> to <c>Rectangle3</c>.
+            </summary>
+            <param name="segment3">The segment3.</param>
+            <param name="rectangle3">The rectangle3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceSegment3.ClosestPointTo(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Rectangle3)">
+            <summary>
+            Closest point in <c>Segment3</c> to <c>Rectangle3</c>.
+            </summary>
+            <param name="segment3">The segment3.</param>
+            <param name="rectangle3">The rectangle3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceSegment3.ShortestSegmentTo(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Rectangle3)">
+            <summary>
+            Shortest segment from <c>Segment3</c> to <c>Rectangle3</c>.
+            </summary>
+            <param name="segment3">The segment3.</param>
+            <param name="rectangle3">The rectangle3.</param>
+            <returns>
+            Shortest segment, negative end is in segment3, positive end is in rectangle3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceSegment3.DistanceTo(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Distance from <c>Segment3</c> to <c>Triangle3</c>.
+            </summary>
+            <param name="segment3">The segment3.</param>
+            <param name="triangle3">The triangle3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceSegment3.ClosestPointTo(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Closest point in <c>Segment3</c> to <c>Triangle3</c>.
+            </summary>
+            <param name="segment3">The segment3.</param>
+            <param name="triangle3">The triangle3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceSegment3.ShortestSegmentTo(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Shortest segment from <c>Segment3</c> to <c>Triangle3</c>.
+            </summary>
+            <param name="segment3">The segment3.</param>
+            <param name="triangle3">The triangle3.</param>
+            <returns>
+            Shortest segment, negative end is in segment3, positive end is in triangle3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceSegment3.DistanceTo(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Distance from <c>Segment3</c> to <c>Box3</c>.
+            </summary>
+            <param name="segment3">The segment3.</param>
+            <param name="box3">The box3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceSegment3.ClosestPointTo(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Closest point in <c>Segment3</c> to <c>Box3</c>.
+            </summary>
+            <param name="segment3">The segment3.</param>
+            <param name="box3">The box3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceSegment3.ShortestSegmentTo(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Shortest segment from <c>Segment3</c> to <c>Box3</c>.
+            </summary>
+            <param name="segment3">The segment3.</param>
+            <param name="box3">The box3.</param>
+            <returns>
+            Shortest segment, negative end is in segment3, positive end is in box3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceSegment3.DistanceTo(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Distance from <c>Segment3</c> to <c>Segment3</c>.
+            </summary>
+            <param name="segment3">The segment3.</param>
+            <param name="other">The other segment3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceSegment3.ClosestPointTo(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Closest point in <c>Segment3</c> to other <c>Segment3</c>.
+            </summary>
+            <param name="segment3">The segment3.</param>
+            <param name="other">The other segment3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceSegment3.ShortestSegmentTo(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Shortest segment from <c>Segment3</c> to other <c>Segment3</c>.
+            </summary>
+            <param name="segment3">The segment3.</param>
+            <param name="other">The other segment3.</param>
+            <returns>Shortest segment, negative end is in segment3, positive end is in other segment3.</returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.DistancePlane3">
+            <summary>
+            Contains extension methods for distance calculus between primitives.
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistancePlane3.DistanceTo(Tekla.Common.Geometry.Plane3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Always positive distance from <c>Plane3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="plane3">The plane3.</param>
+            <param name="vector3">The vector3.</param>
+            <returns>The always positive distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistancePlane3.ClosestPointTo(Tekla.Common.Geometry.Plane3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Closest point in <c>Plane3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="plane3">The plane3.</param>
+            <param name="vector3">The vector3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistancePlane3.ShortestSegmentTo(Tekla.Common.Geometry.Plane3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Shortest segment from <c>Plane3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="plane3">The plane3.</param>
+            <param name="vector3">The vector3.</param>
+            <returns>
+            Shortest segment, negative end is in plane3, positive end is vector3.
+            </returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.DistanceVector3Line3">
+            <summary>
+             Distance between Vector3 and Line3
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceVector3Line3.#ctor(Tekla.Common.Geometry.Vector3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tekla.Common.Geometry.DistanceVector3Line3"/> struct.
+            </summary>
+            <param name="vector">The 3D vector.</param>
+            <param name="line">The 3D line.</param>
+        </member>
+        <member name="P:Tekla.Common.Geometry.DistanceVector3Line3.LineParameter">
+            <summary>
+             Gets the parameter value of the line (distance from the line origin)
+             for closest point.
+            </summary>
+        </member>
+        <member name="P:Tekla.Common.Geometry.DistanceVector3Line3.ClosestPointOnVector">
+            <summary>
+            Gets the closest point in Vector (always the Vector itself)
+            </summary>
+            <returns>The 3D vector</returns>
+        </member>
+        <member name="P:Tekla.Common.Geometry.DistanceVector3Line3.ClosestPointOnLine">
+            <summary>
+             Gets the closest point in Line
+            </summary>
+            <returns>The point of the 3D line that is closest to the 3D vector</returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.IsInsideAxisAlignedBox2">
+            <summary>
+            IsInside extension methods for Box3
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IsInsideAxisAlignedBox2.IsInsideOf(Tekla.Common.Geometry.AxisAlignedBox2,Tekla.Common.Geometry.Segment2)">
+            <summary>
+            Determines whether segment2 is totally inside of the specified axis aligned box.
+            </summary>
+            <param name="axisAlignedBox2">The axisAlignedBox.</param>
+            <param name="segment2">The segment.</param>
+            <returns>
+              <c>true</c> if segment is totally inside of the specified axis aligned box; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IsInsideAxisAlignedBox2.IsInsideOf(Tekla.Common.Geometry.AxisAlignedBox2,Tekla.Common.Geometry.Vector2)">
+            <summary>
+            Determines whether vector is inside of the specified axis aligned box or not.
+            </summary>
+            <param name="axisAlignedBox2">The axis aligned box.</param>
+            <param name="vector2">The vector.</param>
+            <returns>
+              <c>true</c> if the vector is inside of the specified axis aligned box; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.IntersectionPlane3">
+            <summary>
+            Contains extension methods for intersection calculus for 3D plane
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionPlane3.Intersects(Tekla.Common.Geometry.Plane3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Tests if the plane intersects with the given box.
+            </summary>
+            <param name="plane">The plane.</param>
+            <param name="box">The box.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionPlane3.SideClassification(Tekla.Common.Geometry.Plane3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Test on which side the box is.
+            </summary>
+            <param name="plane">The plane.</param>
+            <param name="box">The box.</param>
+            <returns>The classification for the side.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionPlane3.Intersects(Tekla.Common.Geometry.Plane3,Tekla.Common.Geometry.Plane3)">
+            <summary>
+            Tests if the plane intersects with the other plane.
+            </summary>
+            <param name="plane">The plane.</param>
+            <param name="other">The other.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionPlane3.IntersectionWith(Tekla.Common.Geometry.Plane3,Tekla.Common.Geometry.Plane3)">
+            <summary>
+            Creates an intersections of the plane with an other plane
+            </summary>
+            <param name="plane">The plane.</param>
+            <param name="other">The other plane.</param>
+            <returns>The intersection as Line3 or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionPlane3.Intersects(Tekla.Common.Geometry.Plane3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Tests if the plane intersects with the triangle.
+            </summary>
+            <param name="plane">The plane.</param>
+            <param name="triangle">The triangle.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionPlane3.IntersectionWith(Tekla.Common.Geometry.Plane3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Creates an intersections of the plane with the triangle
+            </summary>
+            <param name="plane">The plane.</param>
+            <param name="triangle">The triangle.</param>
+            <returns>The intersection as a segment or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionPlane3.IntersectionPointsWith(Tekla.Common.Geometry.Plane3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Calculates the intersections points of plane with the triangle.
+            </summary>
+            <param name="plane">The plane.</param>
+            <param name="triangle">The triangle.</param>
+            <returns>The collection of intersection points.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionPlane3.Intersects(Tekla.Common.Geometry.Plane3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Tests if the plane intersects with the line.
+            </summary>
+            <param name="plane">The plane.</param>
+            <param name="line">The line.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionPlane3.IntersectionWith(Tekla.Common.Geometry.Plane3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Creates an intersections of the plane with the line
+            </summary>
+            <param name="plane">The plane.</param>
+            <param name="line">The line.</param>
+            <returns>The intersection as vector or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionPlane3.Intersects(Tekla.Common.Geometry.Plane3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Tests if the plane intersects with the ray.
+            </summary>
+            <param name="plane">The plane.</param>
+            <param name="ray">The ray.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionPlane3.IntersectionWith(Tekla.Common.Geometry.Plane3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Creates an intersections of the plane with the ray
+            </summary>
+            <param name="plane">The plane.</param>
+            <param name="ray">The ray.</param>
+            <returns>The intersection as Vector3 or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionPlane3.Intersects(Tekla.Common.Geometry.Plane3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Tests if the plane intersects with the segment.
+            </summary>
+            <param name="plane">The plane.</param>
+            <param name="segment">The segment.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionPlane3.IntersectionWith(Tekla.Common.Geometry.Plane3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Creates an intersections of the plane with the segment
+            </summary>
+            <param name="plane">The plane.</param>
+            <param name="segment">The segment.</param>
+            <returns>The intersection as vector or null if no intersection.</returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.IntersectionRay3">
+            <summary>
+            Contains extension methods for intersection calculus for 3D plane
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionRay3.Intersects(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Tests if the ray intersects with the box.
+            </summary>
+            <param name="ray">The ray.</param>
+            <param name="box">The box.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionRay3.IntersectionWith(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Creates an intersections of the Ray3 with the Box3
+            </summary>
+            <param name="ray">The ray.</param>
+            <param name="box">The box.</param>
+            <returns>The intersection as Segment3 or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionRay3.IntersectionPointsWith(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Calculates the intersections points of the ray with the box.
+            </summary>
+            <param name="ray">The ray.</param>
+            <param name="box">The box.</param>
+            <returns>The collection of intersection points.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionRay3.Intersects(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Plane3)">
+            <summary>
+            Tests if the ray intersects with the plane.
+            </summary>
+            <param name="ray">The ray.</param>
+            <param name="plane">The plane.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionRay3.IntersectionWith(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Plane3)">
+            <summary>
+            Creates an intersections of the ray with the plane
+            </summary>
+            <param name="ray">The ray.</param>
+            <param name="plane">The plane.</param>
+            <returns>The intersection as Vector3 or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionRay3.Intersects(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Tests if the ray intersects with the triangle.
+            </summary>
+            <param name="ray">The ray.</param>
+            <param name="triangle">The triangle.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionRay3.IntersectionWith(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Creates an intersections of the Ray3 with the Triangle3
+            </summary>
+            <param name="ray">The ray.</param>
+            <param name="triangle">The triangle.</param>
+            <returns>The intersection as vector or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionRay3.Intersects(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.AxisAlignedBox3)">
+            <summary>
+            Tests if the ray intersects with the axis aligned box.
+            </summary>
+            <param name="ray">The ray.</param>
+            <param name="axisAlignedBox">The axis aligned box.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.IntersectionAxisAlignedBox3">
+            <summary>
+            Contains extension methods for intersection calculus for 3D axis aligned box
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionAxisAlignedBox3.Intersects(Tekla.Common.Geometry.AxisAlignedBox3,Tekla.Common.Geometry.AxisAlignedBox3)">
+            <summary>
+            Tests if the AxisAlignedBox3 intersects with other.
+            </summary>
+            <param name="axisAlignedBox3">The axis aligned box3.</param>
+            <param name="other">The other.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionAxisAlignedBox3.IntersectionWith(Tekla.Common.Geometry.AxisAlignedBox3,Tekla.Common.Geometry.AxisAlignedBox3)">
+            <summary>
+            Creates an intersections the with two instances of the AxisAlignedBox3
+            </summary>
+            <param name="axisAlignedBox3">The axis aligned box3.</param>
+            <param name="other">The other axis aligned box3.</param>
+            <returns>The intersection as AxisAlignedBox3 or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionAxisAlignedBox3.Intersects(Tekla.Common.Geometry.AxisAlignedBox3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Tests if the AxisAlignedBox3 intersects with ray.
+            </summary>
+            <param name="axisAlignedBox3">The axis aligned box3.</param>
+            <param name="ray">The ray.</param>
+            <returns>
+            Return true if the primitives do intersect, false otherwise.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceSegment3Triangle3.#ctor(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tekla.Common.Geometry.DistanceSegment3Triangle3"/> struct.
+            </summary>
+            <param name="segment">The segment.</param>
+            <param name="triangle">The triangle.</param>
+        </member>
+        <member name="T:Tekla.Common.Geometry.IntersectionAxisAlignedBox2">
+            <summary>
+            Contains extension methods for intersection calculus for 2D axis aligned box
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionAxisAlignedBox2.Intersects(Tekla.Common.Geometry.AxisAlignedBox2,Tekla.Common.Geometry.AxisAlignedBox2)">
+            <summary>
+            Tests if the the axis aligned box intersects with other.
+            </summary>
+            <param name="axisAlignedBox">The axis aligned box.</param>
+            <param name="other">The other.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionAxisAlignedBox2.IntersectionWith(Tekla.Common.Geometry.AxisAlignedBox2,Tekla.Common.Geometry.AxisAlignedBox2)">
+            <summary>
+            Creates an intersections with the two instances of the axis aligned box
+            </summary>
+            <param name="axisAlignedBox">The axis aligned box.</param>
+            <param name="other">The other axis aligned box.</param>
+            <returns>The intersection as axis aligned box or null, if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionAxisAlignedBox2.Intersects(Tekla.Common.Geometry.AxisAlignedBox2,Tekla.Common.Geometry.Segment2)">
+            <summary>
+            Tests if the axis aligned box intersects with segment.
+            </summary>
+            <param name="axisAlignedBox">The axis aligned box.</param>
+            <param name="segment">The segment.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionAxisAlignedBox2.IntersectionWith(Tekla.Common.Geometry.AxisAlignedBox2,Tekla.Common.Geometry.Segment2)">
+            <summary>
+            Creates an intersections of the axis aligned box with the segment
+            </summary>
+            <param name="axisAlignedBox">The axis aligned box.</param>
+            <param name="segment">The segment.</param>
+            <returns>The intersection as Segment or null if no intersection.</returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.DistanceTriangle3">
+            <summary>
+            Contains extension methods for distance calculus between primitives.
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceTriangle3.DistanceTo(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Distance from <c>Triangle3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="triangle3">The triangle3.</param>
+            <param name="vector3">The vector3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceTriangle3.ClosestPointTo(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Closest point in <c>Triangle3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="triangle3">The triangle3.</param>
+            <param name="vector3">The vector3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceTriangle3.ShortestSegmentTo(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Shortest segment from <c>Triangle3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="triangle3">The triangle3.</param>
+            <param name="vector3">The vector3.</param>
+            <returns>
+            Shortest segment, negative end is in triangle3, positive end is vector3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceTriangle3.DistanceTo(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Distance from <c>Triangle3</c> to <c>Line3</c>.
+            </summary>
+            <param name="triangle3">The triangle3.</param>
+            <param name="line3">The line3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceTriangle3.ClosestPointTo(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Closest point in <c>Triangle3</c> to <c>Line3</c>.
+            </summary>
+            <param name="triangle3">The triangle3.</param>
+            <param name="line3">The line3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceTriangle3.ShortestSegmentTo(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Shortest segment from <c>Triangle3</c> to <c>Line3</c>.
+            </summary>
+            <param name="triangle3">The triangle3.</param>
+            <param name="line3">The line3.</param>
+            <returns>
+            Shortest segment, negative end is in triangle3, positive end is in line3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceTriangle3.DistanceTo(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Distance from <c>Triangle3</c> to <c>Ray3</c>.
+            </summary>
+            <param name="triangle3">The triangle3.</param>
+            <param name="ray3">The ray3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceTriangle3.ClosestPointTo(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Closest point in <c>Triangle3</c> to <c>Ray3</c>.
+            </summary>
+            <param name="triangle3">The triangle3.</param>
+            <param name="ray3">The ray3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceTriangle3.ShortestSegmentTo(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Shortest segment from <c>Triangle3</c> to <c>Ray3</c>.
+            </summary>
+            <param name="triangle3">The triangle3.</param>
+            <param name="ray3">The ray3.</param>
+            <returns>
+            Shortest segment, negative end is in triangle3, positive end is in ray3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceTriangle3.DistanceTo(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Rectangle3)">
+            <summary>
+            Distance from <c>Triangle3</c> to <c>Rectangle3</c>.
+            </summary>
+            <param name="triangle3">The triangle3.</param>
+            <param name="rectangle3">The rectangle3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceTriangle3.ClosestPointTo(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Rectangle3)">
+            <summary>
+            Closest point in <c>Triangle3</c> to <c>Rectangle3</c>.
+            </summary>
+            <param name="triangle3">The triangle3.</param>
+            <param name="rectangle3">The rectangle3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceTriangle3.ShortestSegmentTo(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Rectangle3)">
+            <summary>
+            Shortest segment from <c>Triangle3</c> to <c>Rectangle3</c>.
+            </summary>
+            <param name="triangle3">The triangle3.</param>
+            <param name="rectangle3">The rectangle3.</param>
+            <returns>
+            Shortest segment, negative end is in triangle3, positive end is in rectangle3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceTriangle3.DistanceTo(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Distance from <c>Triangle3</c> to <c>Triangle3</c>.
+            </summary>
+            <param name="triangle3">The triangle3.</param>
+            <param name="other">The other triangle3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceTriangle3.ClosestPointTo(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Closest point in <c>Trianglebrawvo3</c> to other <c>Triangle3</c>.
+            </summary>
+            <param name="triangle3">The triangle3.</param>
+            <param name="other">The other triangle3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceTriangle3.ShortestSegmentTo(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Shortest segment from <c>Triangle3</c> to other <c>Triangle3</c>.
+            </summary>
+            <param name="triangle3">The triangle3.</param>
+            <param name="other">The other triangle3.</param>
+            <returns>
+            Shortest segment, negative end is in triangle3, positive end is in other triangle3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceTriangle3.DistanceTo(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Distance from <c>Triangle3</c> to <c>Segment3</c>.
+            </summary>
+            <param name="triangle3">The triangle3.</param>
+            <param name="segment3">The segment3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceTriangle3.ClosestPointTo(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Closest point in <c>Triangle3</c> to <c>Segment3</c>.
+            </summary>
+            <param name="triangle3">The triangle3.</param>
+            <param name="segment3">The segment3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceTriangle3.ShortestSegmentTo(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Shortest segment from <c>Triangle3</c> to <c>Segment3</c>.
+            </summary>
+            <param name="triangle3">The triangle3.</param>
+            <param name="segment3">The segment3.</param>
+            <returns>
+            Shortest segment, negative end is in triangle3, positive end is in segment3.
+            </returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.DistanceRay3">
+            <summary>
+            Contains extension methods for distance calculus between primitives.
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRay3.DistanceTo(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Distance from <c>Ray3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="ray3">The ray3.</param>
+            <param name="vector3">The vector3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRay3.ClosestPointTo(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Closest point in <c>Ray3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="ray3">The ray3.</param>
+            <param name="vector3">The vector3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRay3.ShortestSegmentTo(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Shortest segment from <c>Ray3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="ray3">The ray3.</param>
+            <param name="vector3">The vector3.</param>
+            <returns>
+            Shortest segment, negative end is in ray3, positive end is vector3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRay3.DistanceTo(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Distance from <c>Ray3</c> to <c>Line3</c>.
+            </summary>
+            <param name="ray3">The ray3.</param>
+            <param name="line3">The line3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRay3.ClosestPointTo(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Closest point in <c>Ray3</c> to <c>Line3</c>.
+            </summary>
+            <param name="ray3">The ray3.</param>
+            <param name="line3">The line3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRay3.ShortestSegmentTo(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Shortest segment from <c>Ray3</c> to <c>Line3</c>.
+            </summary>
+            <param name="ray3">The ray3.</param>
+            <param name="line3">The line3.</param>
+            <returns>
+            Shortest segment, negative end is in ray3, positive end is in line3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRay3.DistanceTo(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Distance from <c>Ray3</c> to <c>Box3</c>.
+            </summary>
+            <param name="ray3">The ray3.</param>
+            <param name="box3">The box3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRay3.ClosestPointTo(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Closest point in <c>Ray3</c> to <c>Box3</c>.
+            </summary>
+            <param name="ray3">The ray3.</param>
+            <param name="box3">The box3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRay3.ShortestSegmentTo(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Shortest segment from <c>Ray3</c> to <c>Box3</c>.
+            </summary>
+            <param name="ray3">The ray3.</param>
+            <param name="box3">The box3.</param>
+            <returns>
+            Shortest segment, negative end is in ray3, positive end is in box3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRay3.DistanceTo(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Distance from <c>Ray3</c> to <c>Ray3</c>.
+            </summary>
+            <param name="ray3">The ray3.</param>
+            <param name="other">The other ray3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRay3.ClosestPointTo(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Closest point in <c>Ray3</c> to other <c>Ray3</c>.
+            </summary>
+            <param name="ray3">The ray3.</param>
+            <param name="other">The other ray3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRay3.ShortestSegmentTo(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Shortest segment from <c>Ray3</c> to other <c>Ray3</c>.
+            </summary>
+            <param name="ray3">The ray3.</param>
+            <param name="other">The other ray3.</param>
+            <returns>
+            Shortest segment, negative end is in ray3, positive end is in other ray3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRay3.DistanceTo(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Rectangle3)">
+            <summary>
+            Distance from <c>Ray3</c> to <c>Rectangle3</c>.
+            </summary>
+            <param name="ray3">The ray3.</param>
+            <param name="rectangle3">The rectangle3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRay3.ClosestPointTo(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Rectangle3)">
+            <summary>
+            Closest point in <c>Ray3</c> to <c>Rectangle3</c>.
+            </summary>
+            <param name="ray3">The ray3.</param>
+            <param name="rectangle3">The rectangle3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRay3.ShortestSegmentTo(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Rectangle3)">
+            <summary>
+            Shortest segment from <c>Ray3</c> to <c>Rectangle3</c>.
+            </summary>
+            <param name="ray3">The ray3.</param>
+            <param name="rectangle3">The rectangle3.</param>
+            <returns>
+            Shortest segment, negative end is in ray3, positive end is in rectangle3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRay3.DistanceTo(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Distance from <c>Ray3</c> to <c>Segment3</c>.
+            </summary>
+            <param name="ray3">The ray3.</param>
+            <param name="segment3">The segment3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRay3.ClosestPointTo(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Closest point in <c>Ray3</c> to <c>Segment3</c>.
+            </summary>
+            <param name="ray3">The ray3.</param>
+            <param name="segment3">The segment3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRay3.ShortestSegmentTo(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Shortest segment from <c>Ray3</c> to <c>Segment3</c>.
+            </summary>
+            <param name="ray3">The ray3.</param>
+            <param name="segment3">The segment3.</param>
+            <returns>
+            Shortest segment, negative end is in ray3, positive end is in segment3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRay3.DistanceTo(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Distance from <c>Ray3</c> to <c>Triangle3</c>.
+            </summary>
+            <param name="ray3">The ray3.</param>
+            <param name="triangle3">The triangle3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRay3.ClosestPointTo(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Closest point in <c>Ray3</c> to <c>Triangle3</c>.
+            </summary>
+            <param name="ray3">The ray3.</param>
+            <param name="triangle3">The triangle3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRay3.ShortestSegmentTo(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Shortest segment from <c>Ray3</c> to <c>Triangle3</c>.
+            </summary>
+            <param name="ray3">The ray3.</param>
+            <param name="triangle3">The triangle3.</param>
+            <returns>
+            Shortest segment, negative end is in ray3, positive end is in triangle3.
+            </returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.IntersectionRay3AxisAlignedBox3">
+            <summary>
+            Contains intersection algorithm between Ray3 and AxisAlignedBox3.
+            Implemented based on the algorithm in Intersection Box3 vs AxisAlignedBox3
+            based on specialization of used axes (box.Axis[0] == Vector3.UnitX etc.)
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRay3Segment3.#ctor(Tekla.Common.Geometry.Ray3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tekla.Common.Geometry.DistanceRay3Segment3"/> struct.
+            </summary>
+            <param name="ray">The ray.</param>
+            <param name="segment">The segment.</param>
+        </member>
+        <member name="T:Tekla.Common.Geometry.DistanceRectangle3">
+            <summary>
+            Contains extension methods for distance calculus between primitives.
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRectangle3.DistanceTo(Tekla.Common.Geometry.Rectangle3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Distance from <c>Rectangle3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="rectangle">The rectangle3.</param>
+            <param name="vector">The vector3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRectangle3.ClosestPointTo(Tekla.Common.Geometry.Rectangle3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Closest point in <c>Rectangle3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="rectangle">The rectangle3.</param>
+            <param name="vector">The vector3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRectangle3.ShortestSegmentTo(Tekla.Common.Geometry.Rectangle3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Shortest segment from <c>Rectangle3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="rectangle">The rectangle3.</param>
+            <param name="vector">The vector3.</param>
+            <returns>
+            Shortest segment, negative end is in rectangle3, positive end is vector3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRectangle3.DistanceTo(Tekla.Common.Geometry.Rectangle3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Distance from <c>Rectangle3</c> to <c>Line3</c>.
+            </summary>
+            <param name="rectangle">The rectangle3.</param>
+            <param name="segment">The segment.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRectangle3.ClosestPointTo(Tekla.Common.Geometry.Rectangle3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Closest point in <c>Rectangle3</c> to <c>Line3</c>.
+            </summary>
+            <param name="rectangle">The rectangle3.</param>
+            <param name="segment">The segment.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRectangle3.ShortestSegmentTo(Tekla.Common.Geometry.Rectangle3,Tekla.Common.Geometry.Segment3)">
+            <summary>
+            Shortest segment from <c>Rectangle3</c> to <c>Line3</c>.
+            </summary>
+            <param name="rectangle">The rectangle3.</param>
+            <param name="segment">The segment.</param>
+            <returns>
+            Shortest segment, negative end is in rectangle3, positive end is in line3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRectangle3.DistanceTo(Tekla.Common.Geometry.Rectangle3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Distance from <c>Rectangle3</c> to <c>Line3</c>.
+            </summary>
+            <param name="rectangle">The rectangle3.</param>
+            <param name="line">The line3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRectangle3.ClosestPointTo(Tekla.Common.Geometry.Rectangle3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Closest point in <c>Rectangle3</c> to <c>Line3</c>.
+            </summary>
+            <param name="rectangle">The rectangle3.</param>
+            <param name="line">The line3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRectangle3.ShortestSegmentTo(Tekla.Common.Geometry.Rectangle3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Shortest segment from <c>Rectangle3</c> to <c>Line3</c>.
+            </summary>
+            <param name="rectangle">The rectangle3.</param>
+            <param name="line">The line3.</param>
+            <returns>
+            Shortest segment, negative end is in rectangle3, positive end is in line3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRectangle3.DistanceTo(Tekla.Common.Geometry.Rectangle3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Distance from <c>Rectangle3</c> to <c>Ray3</c>.
+            </summary>
+            <param name="rectangle">The rectangle3.</param>
+            <param name="ray">The ray3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRectangle3.ClosestPointTo(Tekla.Common.Geometry.Rectangle3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Closest point in <c>Rectangle3</c> to <c>Ray3</c>.
+            </summary>
+            <param name="rectangle">The rectangle3.</param>
+            <param name="ray">The ray3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRectangle3.ShortestSegmentTo(Tekla.Common.Geometry.Rectangle3,Tekla.Common.Geometry.Ray3)">
+            <summary>
+            Shortest segment from <c>Rectangle3</c> to <c>Ray3</c>.
+            </summary>
+            <param name="rectangle">The rectangle3.</param>
+            <param name="ray">The ray3.</param>
+            <returns>
+            Shortest segment, negative end is in rectangle3, positive end is in ray3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRectangle3.DistanceTo(Tekla.Common.Geometry.Rectangle3,Tekla.Common.Geometry.Rectangle3)">
+            <summary>
+            Distance from <c>Rectangle3</c> to <c>Rectangle3</c>.
+            </summary>
+            <param name="rectangle">The rectangle3.</param>
+            <param name="other">The other rectangle3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRectangle3.ClosestPointTo(Tekla.Common.Geometry.Rectangle3,Tekla.Common.Geometry.Rectangle3)">
+            <summary>
+            Closest point in <c>Rectangle3</c> to other <c>Rectangle3</c>.
+            </summary>
+            <param name="rectangle">The rectangle3.</param>
+            <param name="other">The other rectangle3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRectangle3.ShortestSegmentTo(Tekla.Common.Geometry.Rectangle3,Tekla.Common.Geometry.Rectangle3)">
+            <summary>
+            Shortest segment from <c>Rectangle3</c> to other <c>Rectangle3</c>.
+            </summary>
+            <param name="rectangle">The rectangle.</param>
+            <param name="other">The other rectangle.</param>
+            <returns>
+            Shortest segment, negative end is in this rectangle, positive end is in other rectangle.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRectangle3.DistanceTo(Tekla.Common.Geometry.Rectangle3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Distance from <c>Rectangle3</c> to <c>Triangle3</c>.
+            </summary>
+            <param name="rectangle">The rectangle3.</param>
+            <param name="triangle">The triangle.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRectangle3.ClosestPointTo(Tekla.Common.Geometry.Rectangle3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Closest point in <c>Rectangle3</c> to <c>Triangle3</c>.
+            </summary>
+            <param name="rectangle">The rectangle3.</param>
+            <param name="triangle">The triangle.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceRectangle3.ShortestSegmentTo(Tekla.Common.Geometry.Rectangle3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Shortest segment from <c>Rectangle3</c> to <c>Triangle3</c>.
+            </summary>
+            <param name="rectangle">The rectangle3.</param>
+            <param name="triangle">The triangle.</param>
+            <returns>
+            Shortest segment, negative end is in rectangle3, positive end is in rectangle3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3Triangle3.#ctor(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tekla.Common.Geometry.DistanceLine3Triangle3"/> struct.
+            </summary>
+            <param name="line">The line.</param>
+            <param name="triangle">The triangle.</param>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceLine3Rectangle3.#ctor(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Rectangle3)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tekla.Common.Geometry.DistanceLine3Rectangle3"/> struct.
+            </summary>
+            <param name="line">The line.</param>
+            <param name="rectangle">The rectangle.</param>
+        </member>
+        <member name="T:Tekla.Common.Geometry.AxisAlignedBoxExtensionMethods">
+            <summary>
+            Extension methods for AxisAlignedBoxes
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.AxisAlignedBoxExtensionMethods.CreateMergedWith(Tekla.Common.Geometry.AxisAlignedBox2,Tekla.Common.Geometry.AxisAlignedBox2)">
+            <summary>
+            Creates the smallest <c>AxisAlignedBox2</c> that contains the two specified <c>AxisAlignedBox2</c> instances.
+            </summary>
+            <param name="axisAlignedBox2">The axis aligned box2.</param>
+            <param name="other">The other axis aligned box2.</param>
+            <returns>The merged <c>AxisAlignedBox2</c>.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.AxisAlignedBoxExtensionMethods.CreateMergedWith(Tekla.Common.Geometry.AxisAlignedBox3,Tekla.Common.Geometry.AxisAlignedBox3)">
+            <summary>
+            Creates the smallest <c>AxisAlignedBox3</c> that contains the two specified <c>AxisAlignedBox3</c> instances.
+            </summary>
+            <param name="axisAlignedBox3">The axis aligned box3.</param>
+            <param name="other">The other axis aligned box3.</param>
+            <returns>The merged <c>AxisAlignedBox3</c>.</returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.QuaternionFactory">
+            <summary>
+            Factory class for creating quaternions from various inputs.
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.QuaternionFactory.CreateFromTransform(Tekla.Common.Geometry.AffineTransform3)">
+            <summary>
+            Creates a <c>Quaternion</c> from rotation axes in transform.
+            </summary>
+            <param name="transform">The transform.</param>
+            <returns>The rotation quaternion.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.QuaternionFactory.CreateFromAxisAngle(Tekla.Common.Geometry.UnitVector3,System.Double)">
+            <summary>
+            Creates a <c>Quaternion</c> from axis/angle -pair.
+            </summary>
+            <param name="axis">The 3D axis.</param>
+            <param name="angle">The angle around the axis.</param>
+            <returns>The rotation quaternion.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.QuaternionFactory.CreateAlign(Tekla.Common.Geometry.Vector3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Compute a quaternion that rotates unit-length vector V1 to unit-length
+            vector V2.  The rotation is about the axis perpendicular to both V1 and
+            V2, with angle of that between V1 and V2.  If V1 and V2 are parallel,
+            any axis of rotation will do, such as the permutation (z2,x2,y2), where
+            V2 = (x2,y2,z2).
+            </summary>
+            <param name="vector1">The vector1.</param>
+            <param name="vector2">The vector2.</param>
+            <returns>The rotation quaternion.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.QuaternionFactory.CreateFromRotationMatrix(Tekla.Common.Geometry.Matrix3)">
+            <summary>
+            Creates a <c>Quaternion</c> from rotation matrix.
+            </summary>
+            <param name="matrix">The matrix.</param>
+            <returns>The rotation quaternion.</returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.IntersectionLine3">
+            <summary>
+            Contains extension methods for intersection calculus for 3D line
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionLine3.Intersects(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Tests if the line intersects with the given box.
+            </summary>
+            <param name="line">The line.</param>
+            <param name="box">The box.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionLine3.IntersectionWith(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Creates an intersections of line with the box.
+            </summary>
+            <param name="line">The line.</param>
+            <param name="box">The box.</param>
+            <returns>The intersection as segment or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionLine3.IntersectionPointsWith(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Calculates the intersections points of the line with the given box.
+            </summary>
+            <param name="line">The line.</param>
+            <param name="box">The box.</param>
+            <returns>The collection of intersection points.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionLine3.Intersects(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Plane3)">
+            <summary>
+            Tests if the the line intersects with the given the plane.
+            </summary>
+            <param name="line">The line.</param>
+            <param name="plane">The plane.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionLine3.IntersectionWith(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Plane3)">
+            <summary>
+            Creates an intersections of the line with given the plane.
+            </summary>
+            <param name="line">The line.</param>
+            <param name="plane">The plane.</param>
+            <returns>The intersection as vector or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionLine3.Intersects(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Tests if the line intersects with the given triangle.
+            </summary>
+            <param name="line">The line.</param>
+            <param name="triangle">The triangle.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionLine3.IntersectionWith(Tekla.Common.Geometry.Line3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Creates an intersections of the line with the triangle
+            </summary>
+            <param name="line">The line.</param>
+            <param name="triangle3">The triangle.</param>
+            <returns>The intersection as vector or null if no intersection.</returns>
+        </member>
+        <member name="F:Tekla.Common.Geometry.Intersection.Type.IT_EMPTY">
+            <summary>
+            Empty intersection
+            </summary>
+        </member>
+        <member name="F:Tekla.Common.Geometry.Intersection.Type.IT_POINT">
+            <summary>
+            Point intersection
+            </summary>
+        </member>
+        <member name="F:Tekla.Common.Geometry.Intersection.Type.IT_SEGMENT">
+            <summary>
+            Segment intersection
+            </summary>
+        </member>
+        <member name="F:Tekla.Common.Geometry.Intersection.Type.IT_LINE">
+            <summary>
+            Line intersection
+            </summary>
+        </member>
+        <member name="F:Tekla.Common.Geometry.Intersection.Type.IT_POLYGON">
+            <summary>
+            Polygon intersection
+            </summary>
+        </member>
+        <member name="F:Tekla.Common.Geometry.Intersection.Type.IT_PLANE">
+            <summary>
+            Plane intersection
+            </summary>
+        </member>
+        <member name="T:Tekla.Common.Geometry.DistanceTriangle3Triangle3">
+            <summary>
+            Distance between two triangles in 3D.
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceTriangle3Triangle3.#ctor(Tekla.Common.Geometry.Triangle3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tekla.Common.Geometry.DistanceTriangle3Triangle3"/> struct.
+            </summary>
+            <param name="triangle0">The triangle0.</param>
+            <param name="triangle1">The triangle1.</param>
+        </member>
+        <member name="T:Tekla.Common.Geometry.DistanceCircle3">
+            <summary>
+            Contains extension methods for distance calculus between primitives.
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceCircle3.DistanceTo(Tekla.Common.Geometry.Circle3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Distance from <c>Circle3</c> to <c>Line3</c>.
+            </summary>
+            <param name="circle3">The circle3.</param>
+            <param name="line3">The line3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceCircle3.ClosestPointTo(Tekla.Common.Geometry.Circle3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Closest point in <c>Circle3</c> to <c>Line3</c>.
+            </summary>
+            <param name="circle3">The circle3.</param>
+            <param name="line3">The line3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceCircle3.ShortestSegmentTo(Tekla.Common.Geometry.Circle3,Tekla.Common.Geometry.Line3)">
+            <summary>
+            Shortest segment from <c>Circle3</c> to <c>Line3</c>.
+            </summary>
+            <param name="circle3">The circle3.</param>
+            <param name="line3">The line3.</param>
+            <returns>
+            Shortest segment, negative end is in circle3, positive end is in line3.
+            </returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceCircle3.DistanceTo(Tekla.Common.Geometry.Circle3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Distance from <c>Circle3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="circle3">The circle3.</param>
+            <param name="vector3">The vector3.</param>
+            <returns>The distance.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceCircle3.ClosestPointTo(Tekla.Common.Geometry.Circle3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Closest point in <c>Circle3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="circle3">The circle3.</param>
+            <param name="vector3">The vector3.</param>
+            <returns>The closest point.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.DistanceCircle3.ShortestSegmentTo(Tekla.Common.Geometry.Circle3,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Shortest segment from <c>Circle3</c> to <c>Vector3</c>.
+            </summary>
+            <param name="circle3">The circle3.</param>
+            <param name="vector3">The vector3.</param>
+            <returns>
+            Shortest segment, negative end is in circle3, positive end is vector3.
+            </returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.Transform3Factory">
+            <summary>
+            Factory class for creating transforms from various inputs.
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.Transform3Factory.CreateFromAxisAngle(Tekla.Common.Geometry.UnitVector3,System.Double,Tekla.Common.Geometry.Vector3,System.Double)">
+            <summary>
+            Creates a rotation transform from axis/angle -pair.
+            </summary>
+            <param name="axis">The 3D axis (must be unit length).</param>
+            <param name="angle">The angle around the axis in radians.</param>
+            <param name="origin">The transform origin.</param>
+            <param name="scale">The transform scale.</param>
+            <returns>The transform.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.Transform3Factory.CreateFromAxisAngle(Tekla.Common.Geometry.UnitVector3,System.Double,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Creates a rotation transform from axis/angle -pair.
+            </summary>
+            <param name="axis">The 3D axis (must be unit length).</param>
+            <param name="angle">The angle around the axis in radians.</param>
+            <param name="origin">The transform origin.</param>
+            <returns>The transform.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.Transform3Factory.CreateFromAxisAngle(Tekla.Common.Geometry.UnitVector3,System.Double)">
+            <summary>
+            Creates a rotation transform from axis/angle -pair.
+            </summary>
+            <param name="axis">The 3D axis (must be unit length).</param>
+            <param name="angle">The angle around the axis in radians.</param>
+            <returns>The transform.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.Transform3Factory.CreateFromQuaternion(Tekla.Common.Geometry.Quaternion,Tekla.Common.Geometry.Vector3,System.Double)">
+            <summary>
+            Creates a rotation transform from quaternion.
+            </summary>
+            <param name="quaternion">The quaternion.</param>
+            <param name="origin">The transform origin.</param>
+            <param name="scale">The transform scale.</param>
+            <returns>The transform.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.Transform3Factory.CreateFromQuaternion(Tekla.Common.Geometry.Quaternion,Tekla.Common.Geometry.Vector3)">
+            <summary>
+            Creates a rotation transform from quaternion.
+            </summary>
+            <param name="quaternion">The quaternion.</param>
+            <param name="origin">The transform origin.</param>
+            <returns>The transform.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.Transform3Factory.CreateFromQuaternion(Tekla.Common.Geometry.Quaternion)">
+            <summary>
+            Creates a rotation transform from quaternion.
+            </summary>
+            <param name="quaternion">The quaternion.</param>
+            <returns>The transform.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.Transform3Factory.CreateOrthonormalBasis(Tekla.Common.Geometry.UnitVector3)">
+            <summary>
+            Creates an transformation from a single unit vector. 
+            Created additional axes Axis0 and Axis1 are perpendicular for given axis. are orthonormal basis vectors.
+            </summary>
+            <param name="axis2">The input vector</param>
+            <returns>Orthonormal basis, the provided w is the Axis2</returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.IntersectionSegment3">
+            <summary>
+            Contains extension methods for intersection calculus for 3D segment
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionSegment3.Intersects(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Tests if the segment intersects with the box.
+            </summary>
+            <param name="segment">The segment.</param>
+            <param name="box">The box3.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionSegment3.IntersectionWith(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Creates an intersections of the segment with the box
+            </summary>
+            <param name="segment">The segment.</param>
+            <param name="box">The box.</param>
+            <returns>The intersection as a segment or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionSegment3.IntersectionPointsWith(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Box3)">
+            <summary>
+            Calculates the intersections points of segment3 with box.
+            </summary>
+            <param name="segment">The segment.</param>
+            <param name="box">The box.</param>
+            <returns>The collection of intersection points.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionSegment3.Intersects(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Plane3)">
+            <summary>
+            Tests if the segment intersects with the plane.
+            </summary>
+            <param name="segment">The segment.</param>
+            <param name="plane">The plane.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionSegment3.IntersectionWith(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Plane3)">
+            <summary>
+            Creates an intersections of the segment with the plane
+            </summary>
+            <param name="segment">The segment.</param>
+            <param name="plane">The plane.</param>
+            <returns>The intersection as vector or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionSegment3.Intersects(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Tests if the segment intersects with the triangle.
+            </summary>
+            <param name="segment">The segment.</param>
+            <param name="triangle">The triangle.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionSegment3.IntersectionWith(Tekla.Common.Geometry.Segment3,Tekla.Common.Geometry.Triangle3)">
+            <summary>
+            Creates an intersections of the segment with the triangle
+            </summary>
+            <param name="segment">The segment.</param>
+            <param name="triangle">The triangle.</param>
+            <returns>The intersection as vector or null if no intersection.</returns>
+        </member>
+        <member name="T:Tekla.Common.Geometry.IntersectionLine2">
+            <summary>
+            Contains extension methods for intersection calculus for 2D triangle
+            </summary>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionLine2.Intersects(Tekla.Common.Geometry.Line2,Tekla.Common.Geometry.Triangle2)">
+            <summary>
+            Tests if the line intersects with the triangle.
+            </summary>
+            <param name="line">The line.</param>
+            <param name="triangle">The triangle.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionLine2.Intersects(Tekla.Common.Geometry.Line2,Tekla.Common.Geometry.Box2)">
+            <summary>
+            Tests if the line intersects with the box.
+            </summary>
+            <param name="line">The line.</param>
+            <param name="box">The box.</param>
+            <returns>Return true if the primitives do intersect, false otherwise.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionLine2.IntersectionWith(Tekla.Common.Geometry.Line2,Tekla.Common.Geometry.Triangle2)">
+            <summary>
+            Creates an intersection of the line with the triangle
+            </summary>
+            <param name="line">The line.</param>
+            <param name="triangle">The triangle.</param>
+            <returns>The intersection as segment or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionLine2.IntersectionWith(Tekla.Common.Geometry.Line2,Tekla.Common.Geometry.Box2)">
+            <summary>
+            Creates an intersections of the line with the box
+            </summary>
+            <param name="line">The line.</param>
+            <param name="box">The box.</param>
+            <returns>The intersection as segment or null if no intersection.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionLine2.IntersectionPointsWith(Tekla.Common.Geometry.Line2,Tekla.Common.Geometry.Triangle2)">
+            <summary>
+            Calculates the intersections points of line with triangle.
+            </summary>
+            <param name="line">The line.</param>
+            <param name="triangle">The triangle.</param>
+            <returns>The collection of intersection points.</returns>
+        </member>
+        <member name="M:Tekla.Common.Geometry.IntersectionLine2.IntersectionPointsWith(Tekla.Common.Geometry.Line2,Tekla.Common.Geometry.Box2)">
+            <summary>
+            Calculates the intersections points of line with box.
+            </summary>
+            <param name="line">The line.</param>
+            <param name="box">The box.</param>
+            <returns>The collection of intersection points.</returns>
+        </member>
+    </members>
+</doc>
